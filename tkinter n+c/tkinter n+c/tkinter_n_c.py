@@ -1,3 +1,4 @@
+
 import os, time
 from tkinter import *
 
@@ -16,6 +17,7 @@ def handlerAdd1(event):
     labText = lab1.cget("text")
     if labText == "-":
         lab1.config(text = currPlayer)
+        labInvalid.config(text = "")
         if currPlayer == "X":
             currPlayer = "O"
         else:
@@ -23,7 +25,7 @@ def handlerAdd1(event):
                 currPlayer = "X"
         winCheck()
     else:
-        print("Invalid Move")
+        labInvalid.config(text = "Invalid Move!")
 
 def handlerAdd2(event):
     global x
@@ -32,6 +34,7 @@ def handlerAdd2(event):
     labText = lab2.cget("text")
     if labText == "-":
         lab2.config(text = currPlayer)
+        labInvalid.config(text = "")
         if currPlayer == "X":
             currPlayer = "O"
         else:
@@ -39,7 +42,7 @@ def handlerAdd2(event):
                 currPlayer = "X"
         winCheck()
     else:
-        print("Invalid Move")
+        labInvalid.config(text = "Invalid Move!")
 
 def handlerAdd3(event):
     global x
@@ -47,6 +50,7 @@ def handlerAdd3(event):
     labText = lab3.cget("text")
     if labText == "-":
         lab3.config(text = currPlayer)
+        labInvalid.config(text = "")
         if currPlayer == "X":
             currPlayer = "O"
         else:
@@ -54,7 +58,7 @@ def handlerAdd3(event):
                 currPlayer = "X"
         winCheck()
     else:
-        print("Invalid Move")
+        labInvalid.config(text = "Invalid Move!")
 
 def handlerAdd4(event):
     global x
@@ -62,6 +66,7 @@ def handlerAdd4(event):
     labText = lab4.cget("text")
     if labText == "-":
         lab4.config(text = currPlayer)
+        labInvalid.config(text = "")
         if currPlayer == "X":
             currPlayer = "O"
         else:
@@ -69,7 +74,7 @@ def handlerAdd4(event):
                 currPlayer = "X"
         winCheck()
     else:
-        print("Invalid Move")
+        labInvalid.config(text = "Invalid Move!")
 
 def handlerAdd5(event):
     global x
@@ -77,6 +82,7 @@ def handlerAdd5(event):
     labText = lab5.cget("text")
     if labText == "-":
         lab5.config(text = currPlayer)
+        labInvalid.config(text = "")
         if currPlayer == "X":
             currPlayer = "O"
         else:
@@ -84,7 +90,7 @@ def handlerAdd5(event):
                 currPlayer = "X"
         winCheck()
     else:
-        print("Invalid Move")
+        labInvalid.config(text = "Invalid Move!")
 
 def handlerAdd6(event):
     global x
@@ -92,6 +98,7 @@ def handlerAdd6(event):
     labText = lab6.cget("text")
     if labText == "-":
         lab6.config(text = currPlayer)
+        labInvalid.config(text = "")
         if currPlayer == "X":
             currPlayer = "O"
         else:
@@ -99,7 +106,7 @@ def handlerAdd6(event):
                 currPlayer = "X"
         winCheck()
     else:
-        print("Invalid Move")
+        labInvalid.config(text = "Invalid Move!")
 
 def handlerAdd7(event):
     global x
@@ -107,6 +114,7 @@ def handlerAdd7(event):
     labText = lab7.cget("text")
     if labText == "-":
         lab7.config(text = currPlayer)
+        labInvalid.config(text = "")
         if currPlayer == "X":
             currPlayer = "O"
         else:
@@ -114,7 +122,7 @@ def handlerAdd7(event):
                 currPlayer = "X"
         winCheck()
     else:
-        print("Invalid Move")
+        labInvalid.config(text = "Invalid Move!")
 
 def handlerAdd8(event):
     global x
@@ -122,6 +130,7 @@ def handlerAdd8(event):
     labText = lab8.cget("text")
     if labText == "-":
         lab8.config(text = currPlayer)
+        labInvalid.config(text = "")
         if currPlayer == "X":
             currPlayer = "O"
         else:
@@ -129,7 +138,7 @@ def handlerAdd8(event):
                 currPlayer = "X"
         winCheck()
     else:
-        print("Invalid Move")
+        labInvalid.config(text = "Invalid Move!")
 
 def handlerAdd9(event):
     global x
@@ -137,6 +146,7 @@ def handlerAdd9(event):
     labText = lab9.cget("text")
     if labText == "-":
         lab9.config(text = currPlayer)
+        labInvalid.config(text = "")
         if currPlayer == "X":
             currPlayer = "O"
         else:
@@ -144,7 +154,7 @@ def handlerAdd9(event):
                 currPlayer = "X"
         winCheck()
     else:
-        print("Invalid Move")
+        labInvalid.config(text = "Invalid Move!")
 
 
 def winCon(direction):
@@ -160,6 +170,15 @@ def winCon(direction):
             currPlayer = "X"
         labWin.config(text = currPlayer + "Wins!")
         gameRun = False
+        btn1.grid_forget()
+        btn2.grid_forget()
+        btn3.grid_forget()
+        btn4.grid_forget()
+        btn5.grid_forget()
+        btn6.grid_forget()
+        btn7.grid_forget()
+        btn8.grid_forget()
+        btn9.grid_forget()
 
 def winCheck():
     labText = lab1.cget("text")
@@ -240,6 +259,9 @@ while gameRun == True:
     labWin = Label(window, text = "")
     labWin.place(x = 200, y = 300)
 
+    labInvalid = Label(window, text = "")
+    labInvalid.place(x = 200, y = 400)
+
     btn1 = Button(window, text = "-")
     btn1.config(height = 5, width = 10)
     btn1.grid(row = 1, column = 1)
@@ -286,7 +308,6 @@ while gameRun == True:
     btn9.bind('<Button-1>', handlerAdd9)
 
     window.mainloop()
-
 
 
 

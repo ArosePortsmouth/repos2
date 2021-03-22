@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>0a493b13-8b10-4b25-a6da-b0f6fd2c4436</ProjectGuid>
+    <ProjectGuid>55f781f6-5894-4344-916a-0ec53566f5b6</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>tkinter_n_c.py</StartupFile>
     <SearchPath>
